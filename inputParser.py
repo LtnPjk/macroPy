@@ -75,9 +75,10 @@ def on_release(key):
         #print(activeKeys)
     #print('Key {} released'. format(key))
     
-    if str(key) == 'Key.esc':
+    '''if str(key) == 'Key.esc':
         print('Exiting...')
         return False
+    '''
 with keyboard.Listener(
     on_press = on_press, on_release = on_release) as listener:
     listener.join()
