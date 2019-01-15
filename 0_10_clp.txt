@@ -1,0 +1,13 @@
+ 11   ┆ #Read current clipboard to restore later                                                                                                                                                                               
+ 12   ┆ oldCb = pyperclip.paste()                                                                                                                                                                                              
+ 13   ┆ keyboard = Controller()                                                                                                                                                                                                
+ 14   ┆ #Emulate Ctrl+C                                                                                                                                                                                                        
+ 15   ┆ pyautogui.hotkey('ctrl', 'c')                                                                                                                                                                                          
+ 16   ┆ newCb = str(pyperclip.paste())                                                                                                                                                                                         
+ 17   ┆ #Save new clipboard to file '0_1_clp.txt'                                                                                                                                                                              
+ 18   ┆ file = open(os.path.dirname(os.path.realpath(__file__))+'/0_1_clp.txt', 'w')                                                                                                                                           
+ 19   ┆ file.write(newCb)                                                                                                                                                                                                      
+ 20   ┆ file.close()                                                                                                                                                                                                           
+ 21   ┆ print("Copied:\n'", newCb, "'")                                                                                                                                                                                        
+ 22   ┆ #Restore old clipboard                                                                                                                                                                                                 
+ 23   ┆ pyperclip.copy(oldCb)  
